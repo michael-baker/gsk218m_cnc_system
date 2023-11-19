@@ -1,4 +1,6 @@
-O00001
+O00002
+(Center of bore cycle for GSK218M);
+
 G21;
 G91;
 G54;
@@ -44,7 +46,6 @@ G65 H01 P#5207 Q#122;
 
 G90 
 G1 X0 F500
-
 
 M30;
 %
