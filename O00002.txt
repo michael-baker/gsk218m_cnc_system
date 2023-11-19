@@ -17,7 +17,7 @@ G31 X100 F100;
 (Record X-axis machine position #2)
 G65 H01 P#101 Q#5006;
 
-(Calculate center X A+B/2)
+(X-axis median A+B/2)
 G65 H02 P#102 Q#100 R#101;
 G65 H05 P#102 Q#102 R2;
 
@@ -37,7 +37,7 @@ G31 Y100 F100;
 G65 H01 P#121 Q#5007;
 
 
-(Calculate center X A+B/2)
+(Y-axis median A+B/2)
 G65 H02 P#122 Q#120 R#121;
 G65 H05 P#122 Q#122 R2;
 
