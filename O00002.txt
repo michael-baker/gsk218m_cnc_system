@@ -1,51 +1,36 @@
-O00002
-(Center of bore cycle for GSK218M);
+(Center of bore probe routine for GSK218M)
 
 G21;
 G91;
 G54;
 
-G31 X-100 F100;
-(G01 X0.1 F100;)
+(Save current position to G54 & G55)
+G65 H01 P#5206 Q#5006
+G65 H01 P#5211 Q#5006
 
-(Record X-axis machine position #1)
-G65 H01 P#100 Q#5006;
+(Double touch in negative X direction)
+G31 X-50 F500 (Fast probe to approximate position)
 
-G31 X100 F100;
-(G01 X-0.1 F100;)
+G0 X2 (Retract a small distance)
+G31 X-50 F20 (Slow probe for accurate position)
+G65 H01 P#101 Q#5006 (Assign axis position to #101)
 
-(Record X-axis machine position #2)
-G65 H01 P#101 Q#5006;
+G90 G0 X0 (Move back to start position)
+G91
 
-(X-axis median A+B/2)
-G65 H02 P#102 Q#100 R#101;
-G65 H05 P#102 Q#102 R2;
+(Double touch in positive X direction)
+G31 X50 F500 (Fast probe to approximate position)
 
-(Set G54 workpiece zero offset value of the 1st axis)
-G65 H01 P#5206 Q#102;
+G0 X-2 (Retract a small distance)
+G31 X50 F20 (Slow probe for accurate position)
+G65 H01 P#103 Q#5006 (Assign axis position to #103)
 
-G31 Y-100 F100;
-(G01 Y0.1 F100;)
-
-(Record Y-axis machine position #1)
-G65 H01 P#120 Q#5007;
-
-G31 Y100 F100;
-(G01 X-0.1 F100;)
-
-(Record Y-axis machine position #2)
-G65 H01 P#121 Q#5007;
-
-
-(Y-axis median A+B/2)
-G65 H02 P#122 Q#120 R#121;
-G65 H05 P#122 Q#122 R2;
+(Calculate X center)
+G65 H02 P#104 Q#101 R#103 (Add the positions: #104 = #101 + #103)
+G65 H05 P#105 Q#104 R2 (Divide by 2 for the average: #105 = #104 / 2)
 
 (Set G54 workpiece zero offset value of the 1st axis)
-G65 H01 P#5207 Q#122;
+G65 H01 P#5206 Q#105
 
-G90 
-G1 X0 F500
-
-M30;
-%
+G90 G0 X0
+M30
