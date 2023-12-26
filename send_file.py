@@ -22,13 +22,14 @@ class Command:
 
     def upload_file(self):
         if (self.file_path):
-            fileName = Path(self.file_path).name       
+            fileName = Path(self.file_path).stem + ".txt"
             if (self.overwrite):
                 self.queue_command("xdel " + fileName)          
 
             self.queue_command("xdl " + fileName + " -t ")                      
 
     def send_command(self, cmd):
+        print('sending->' + cmd)
         self.serialPort.write((cmd + '\r\n').encode())
 
     def queue_command(self, cmd):
@@ -55,7 +56,10 @@ def main(args, cmd):
         return
     
     cmd.command = args[1].lower()
-    cmd.file_path = args[2]
+   
+    fullPath = Path(args[2]).resolve()
+    if (fullPath.exists):
+        cmd.file_path = str(fullPath)
     cmd.overwrite = False  # Default value for overwrite
 
     if len(args) > 3:
@@ -141,8 +145,8 @@ while True:
 
             cmd.send_command(command)
         else:
-            if (command):
-                quit()                
+            if (command):                
+                quit()
 
             # get keyboard input
             data = input()
