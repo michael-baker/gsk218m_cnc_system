@@ -7,10 +7,12 @@ import logging
 import sys
 from pathlib import Path 
 
-logging.basicConfig(filename='myapp.log', level=logging.DEBUG)
+#logging.basicConfig(filename='serial.log', level=logging.DEBUG)
 
 # Protocol bytes
 ESC = 27
+
+UPLOAD = 'upload'
 
 class Command:
     commandQueue = []
@@ -36,7 +38,7 @@ class Command:
         self.commandQueue.append(cmd)
 
     def process(self, data, data_str):
-        if (self.command == 'upload'):
+        if (self.command == UPLOAD):
             if (data[0] == ESC):
                 print('upload rejected')              
             elif data_str.find('txt is not found!') != -1:
@@ -51,7 +53,7 @@ class Command:
 cmd = Command()
 
 def main(args, cmd):
-    if len(args) < 3 or args[1].lower() != "upload":
+    if len(args) < 3 or args[1].lower() != UPLOAD:
         print("Usage: script_name.py upload <file_path> [overwrite]")
         return
     
