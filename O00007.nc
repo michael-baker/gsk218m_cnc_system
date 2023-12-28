@@ -71,13 +71,10 @@ G53 G90 G0 Z0;
 (Half of probe's effective tip diameter)
 G65 H05 P#117 Q#2109 R2; 
 
-(Define the X-AXIS values)
-(Adjust these values to account for the probe's tip diameter)
-(Calculate the center point)
-G65 H03 P#113 Q#102 R#117;
-G65 H02 P#114 Q#108 R#117;
-
+G65 H02 P#113 Q#102 R#117; (Add tip radius to X1)
+G65 H03 P#114 Q#108 R#117; (Subtract tip radius to X2)
 G65 H02 P#115 Q#113 R#114;
+(Calculate center point)
 G65 H05 P#116 Q#115 R2;
 G53 G90 G0 X#116;
 
