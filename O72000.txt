@@ -2,6 +2,7 @@ O72000;
 (Bore Center)
 (D = #7 = Approx diameter)
 (F = #9 = Feedrate)
+(Tool 10 diameter #2109)
 G91;
 
 G65 H86 P910 Q#7 R0;
