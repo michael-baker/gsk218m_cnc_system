@@ -1,0 +1,12 @@
+O72010;
+(Parameter validation)
+
+G65 H85 P930 Q#500 R100; (Fine probe feedrate)
+G65 H86 P940 Q#2109 R0; (Tool 10 diameter #2109)
+
+G65 H80 P1000;
+
+N930 G65 H01 P#3000 Q1; (No probe feedrate or feedrate too fast)
+N940 G65 H01 P#3000 Q1; (Tool diameter too small)
+
+N1000 M99;

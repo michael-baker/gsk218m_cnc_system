@@ -2,18 +2,18 @@ O72000;
 (Bore Center)
 (D = #7 = Approx diameter)
 (F = #9 = Feedrate)
-(Tool 10 diameter #2109)
-G91;
-
 G65 H86 P910 Q#7 R0;
 G65 H86 P920 Q#9 R0;
 G65 H86 P930 Q#500 R0;
+G65 P72010;
 
 (Change diameter to radius)
 G65 H05 P#7 Q#7 R2;
 
 G65 H01 P#20 Q#5011;
 G65 H01 P#21 Q#5012;
+
+G91;
 
 (Probe X)
 G31 X#7 F#9;
@@ -106,9 +106,8 @@ G90 G01 Y#21 F#9;
 G91 G01 X#14 Y#15 F#9;
 G65 H80 P1000;
 
-N900 G65 H01 P#3000 Q1 (Protected move fail)
-N910 G65 H01 P#3000 Q1 (No diameter)
-N920 G65 H01 P#3000 Q1 (No feedrate)
-N930 G65 H01 P#3000 Q1 (No probe feedrate)
+N900 G65 H01 P#3000 Q1; (Protected move fail)
+N910 G65 H01 P#3000 Q1; (No diameter)
+N920 G65 H01 P#3000 Q1; (No feedrate)
 
 N1000 M99;
