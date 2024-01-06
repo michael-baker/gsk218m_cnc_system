@@ -1,0 +1,506 @@
+M00 F0317 Program Stop
+M01 F0304 Optional Stop
+M02 F0305 End of Program
+M03 F0300 Spindle forward
+M04 F0301 Spindle backward
+M05 F0302 Spindle stop
+M06 F0303 Auto change tool
+M08 F0310 Coolant on
+M09 F0311 Coolant off
+M10 F0312 A axis Clamp
+M11 F0313 A axis Release
+M16 F0260 Release tool
+M17 F0261 Clamp tool
+M18 F0283 Cancel Spindle halt
+M19 F0262 Spindle halt
+M20 F0325 Spindle free
+M21 F0263 Tool search in retraction
+M22 F0264 Tool search in clamping
+M23 F0265 Tool magazine to spindle
+M24 F0266 Tool magazine to origin
+M26 F0275 Startup Peck drilling
+M27 F0276 Stop Peck drilling
+M28 F0323 Cancel rigid tapping
+M29 F0322 Rigid tapping
+M30 F0280 End of Program
+M35 F0281 Startup screw peck drilling
+M36 F0282 Stop screw peck drilling
+M44 F0267 Spindle blow start
+M45 F0270 Spindle blow stop
+M50 F0271 Auto change tool start
+M51 F0272 Auto change tool stop
+M53 F0273 Is right tool after change?
+M55 F0274 Have tool in spindle?
+%
+X0000     X axis positive travel limit             
+X0001     X axis negative travel limit             
+X0002     Y axis positive travel limit             
+X0003     Y axis negative travel limit             
+X0004     Z axis positive travel limit             
+X0005     Z axis negative travel limit             
+X0006     4th axis positive travel limit           
+X0007     4th axis negative travel limit           
+X0010     X axis zero return dec          
+X0011     Y axis zero return dec          
+X0012     Z axis zero return dec          
+X0013     4th axis zero return dec        
+X0014     Emergency switch                         
+X0015     External cycle start                     
+X0016     External Pause                      
+X0017     Pressure switch detection                
+X0020     Low lubricant level                      
+X0021     Undefined                      
+X0022     Cooling motor overheat                   
+X0023     Hydraulic motor overheat                 
+X0024     External tool release/clamp                               
+X0025     Tool release detection                   
+X0026     Tool clamp detection                     
+X0027     Spindle unit alarm                       
+X0030     Edit Lock                                
+X0031     Operate Lock                                
+X0032     Undefined                                
+X0033     Undefined                                
+X0034     Undefined                                
+X0035     Undefined                                
+X0036     Undefined                                
+X0037     Undefined                                
+X0040     Hand unit enable                         
+X0041     1st spindle gear in-position             
+X0042     2nd spindle gear in-position             
+X0043     3rd spindle gear in-position             
+X0044     Check status of spindle                                
+X0045     Undefined                                
+X0046     Spindle speed in-position                
+X0047     Spindle zero detection                   
+X0050     Spindle orientation in-position          
+X0051     MAG. move forward in-pos   
+X0052     MAG. move backward in-pos  
+X0053     MAG. rotation f/b in-pos
+X0054     MAG. zero in-position           
+X0055     MAG. air press detection        
+X0056     Undefined                                
+X0057     Spindle alarm                            
+X0060     external handwheel X selection           
+X0061     external handwheel Y selection           
+X0062     external handwheel Z selection           
+X0063     external handwheel A selection           
+X0064     external handwheel X step 0.001           
+X0065     external handwheel X step 0.01           
+X0066     external handwheel X step 0.1           
+X0067     external emergent halt 
+Y0000     Z axis brake hold                        
+Y0001     Cooling                                  
+Y0002     Tool release or clamp                    
+Y0003     Program end (M30)and power off           
+Y0004     Spindle brake                            
+Y0005     Spindle act                              
+Y0006     Red alarm light                          
+Y0007     Yellow alarm light                       
+Y0010     Green alarm light                        
+Y0011     Swarf control                            
+Y0012     Lubricant control                        
+Y0013     Machine illumination                     
+Y0014     Undefined                                
+Y0015     Spindle blow                             
+Y0016     Undefined                          
+Y0017     Undefined                          
+Y0020     Spindle enable                           
+Y0021     Spindle orientation                      
+Y0022     Spindle forward                                
+Y0023     Spindle reverse                                
+Y0024     Hand unit light                          
+Y0025     Spindle zero clamping                    
+Y0026     Undefined                                
+Y0027     Speed/Position mode of spindle                                
+Y0030     Tool magazine rotation forward           
+Y0031     Tool magazine rotation backward          
+Y0032     Tool magazine move forward               
+Y0033     Tool magazine move backward              
+Y0034     Spindle gear 1(freq convert\IO)
+Y0035     Spindle gear 2(freq convert\IO)
+Y0036     Spindle gear 3(freq convert\IO)
+Y0037     Spindle gear 4(freq convert\IO)
+Y0040     Undefined
+Y0041     Undefined
+Y0042     Undefined
+Y0043     Undefined
+Y0044     Undefined 
+Y0045     Undefined
+Y0046     Undefined
+Y0047     Undefined
+Y0050     Undefined
+Y0051     Undefined
+Y0052     Undefined
+Y0053     Undefined
+Y0054     Undefined
+Y0055     Undefined
+Y0056     Undefined
+Y0057     Undefined
+K0060     X limit on-off select(0:2,1:1)                               
+K0061     X limit on-off select(0:2,1:1)                 
+K0062     X limit on-off select(0:2,1:1)                    
+K0063     4TH limit on-off select(0:2,1:1)       
+K0064     Reserved 
+K0065     Reserved 
+K0066     Reserved          
+K0067     Reserved 
+K0070     X limit alarm reverse   
+K0071     Y limit alarm reverse  
+K0072     Z limit alarm reverse  
+K0073     4TH limit alarm reverse
+K0074     Reserved 
+K0075     Reserved 
+K0076     Reserved 
+K0077     Use mode of spindle pos(Y/N)  
+K0080     spindle positioning check is closure             
+K0081     Release/clamp ctrl by panel    
+K0082     Not use release/clamp equipment
+K0083     Use auto lubricate equipment   
+K0084     Spindle has switch device(Y/N)
+K0085     spindle speed in position check is closure
+K0086     Mode of spindle speed is closure(Y/N)
+K0087     Mode of spindle switch hasn't check On-off
+K0090     hasn't On-off of spindle in-pos(Y/N)
+K0091     Reserved 
+K0092     Reserved 
+K0093     Reserved 
+K0094     Reserved 
+K0095     Reserved 
+K0096     Reserved 
+K0097     Reserved 
+K0100     Select in-pos manner of MAG. rotate                  
+K0101     MAG. have on-off of return zero                   
+K0102     MAG. on-off of return zero is contact closure           
+K0103     MAG. on-off of advance is contact closure                            
+K0104     MAG. on-off of restract is contact closure               
+K0105     MAG. on-off of counter is contact closure                
+K0106     Setting of MAG. origin is valid                    
+K0107     MAG. is in debug mode                             
+K0110     Prompt spindle no. on manual release/clamp         
+K0111     Permit return change tool pos by manual      
+K0112     Clean Alarm of No.1244 by modify parameter
+K0113     Clean alarm info of No.1244
+K0114     Reserved 
+K0115     Reserved 
+K0116     Reserved 
+K0117     Reserved
+K0120     if tool detect effective
+K0121     if spindle tool detect switch normal-close
+K0122     if tool detect in current pan valid
+K0123     if cur.pan detect switch normal-close
+K0130     If use external feed override switch
+K0131     If use external rapid override switch
+K0132     If use external spindle override switch
+K0133     If use from 50% to 120% external spindle override
+K0150     Operate panel B(Y/N)
+A0000     Abnormal air pressure                    
+A0001     Abnormal lubricant                            
+A0002     Abnormal lubrication motor              
+A0003     Abnormal cooling motor                  
+A0004     Abnormal chip cleaner motor             
+A0005     Abnormal pressure oil pump motor        
+A0006     Abnormal spindle cooling unit           
+A0007     Abnormal machine light                  
+A0010     Abnormal temperature of machine ctrl box
+A0011     Abnormal temperature of machine bed     
+A0012     Abnormal machine vibration frequency    
+A0013     Abnormal pressure oil temperature       
+A0014     oil pressure low                        
+A0007     Abnormal machine light
+A0010     Abnormal machine cabinet temperature  
+A0011     Abnormal machine bed temperature      
+A0012     Abnormal machine chatter frequency    
+A0013     Abnormal oil temperature              
+A0014     low oil pressure 
+A0015     machine no ready 
+A0016     Cann't rotate as spindle gear abnormal
+A0017     Need run T code before M06                       
+A0020     Can't rotate spindle on tool unstuck
+A0021     Can't release tool rotating spindle
+A0022     Re-affirm tool no. as tool abnormal stop
+A0023     Can't rotate spindle on Tool advance pos.
+A0024     abnormal spindle tool clamping          
+A0025     abnormal spindle tool releasing         
+A0026     abnormal spindle unit temperature       
+A0027     abnormal spindle speed                  
+A0030     abnormal spindle motor enabling         
+A0031     abnormal spindle orientation in-pos detect
+A0032     abnormal spindle gear shifting          
+A0033     MAG cann't rotate as not in origin 
+A0034     Can't startup on Tool advance pos.                         
+A0035     need set spindle's tool no. 
+A0036     Can't change tool on spindle unstuck 
+A0037     Can't change tool as it's not in back pos.             
+A0040     abnormal tool storage rotation in-pos   
+A0041     motor abnormal for tool storage rotating
+A0042     Stop move as MAG in pos of forward                 
+A0043     abnormal tool storage move in-position  
+A0044     abnormal tool storage zero return       
+A0045     need return zero as tool origin lose    
+A0046     tool advance in-pos detect error       
+A0047     tool restract in-pos detect error    
+A0050     need return zero as tool abnormal
+A0051     detect abnormal in tool advance     
+A0052     detect abnormal in tool restract
+A0053     setting of tool zero is valid
+A0054     Can't change tool as MAG is abnormal 
+A0055     Tool no. haven't or repeat in tool table
+A0056     Can't advance tool not in-pos of change tool
+A0057     Can't advance tool as spindle hasn't orientate
+A0060     Can't restract tool on tool unstuck
+A0061     Can't advance as spindle has tool
+A0062     Can't advance as spindle same cur tool of MAG. 
+A0063     Power off please
+A0064     Can't move Z on tool clamp
+A0065     be careful of operate in MAG. adjust mode
+A0066     Can't Startup in MAG. adjust mode
+A0067     Can't return Origin in tool clamp
+A0070     Can't return change pos in tool clamp
+A0071     Can't ret change pos as S hasn't orientate
+A0072     Can't return change pos as MAG abnormal
+A0073     Can't change tool as T number is abnormal
+A0074     Can't startup in ret change pos by manual
+A0075     Can't restract as it's not in Origin
+A0076     Over safety position
+A0077     Can't startup in debug mode
+A0080     Mode of spindle Speed/Position is abnormal
+A0081     Mode of spindle Position/Speed is abnormal
+A0082     Gear shift disabled in spindle running
+A0083     Abnormal magazine moves forward or backward 
+A0084     Abnormal spindle clamp or release 
+A0085     Abnormal spindle oriented sequence
+A0086     Can't change tool as Z not return to MAC. Zero
+A0087     Stop compulsorily as magazine abnormal running
+A0090     Abnormal spindle tool number
+A0091     Can't advance as cur. tool number has a tool
+A0092     Can't advance as MAG. is not in-pos.
+A0200     lubrication pressure low or oil low
+R0104     MT-MAG. zeroing
+R0105     MT-MAG. CCW
+R0106     MT-MAG. CW
+R0107     MT-MAG. tool pivot
+R0110     MT-MAG. tool backward
+R0111     Cycle start signal upward edge
+R0300     Spindle CCW upward edge
+R0301     Spindle CW upward edge
+R0450     spindle speed in-position
+R0451     spindle position/speed detect
+R0452     rigid tapping cancel signal
+R0453     T function strobe signal upward edge
+R0454     spindle position switching over
+R0455     spindle position mode delay detect
+R0456     delay finish of rigid tapping
+R0457     delay finish of spindle orientating
+R0460     spindle positioning end delay
+R0462     current pan tool detect switch
+R0463     spindle tool detect switch
+R0464     MAG. Zeroing finish
+R0467     MAG. feed inposition
+R0470     cancel rigid tapping signal in Auto
+R0471     cancel rigid tapping signal in Manual
+R0472     delay finish of rigid tapping cancel
+R0473     spindle speed switching over         
+R0474     spindle speed mode delay detect      
+R0477     spindle position mode          
+R0480     spindle speed mode            
+R0481      spindle speed mode            
+R0483     spindle orientating input            
+R0484     use spindle position mode            
+R0485     If the tool number  same as spindle tool number
+R0490     spindle CCW                                       
+R0491     spindle CW
+R0492     MAG. CCW/CW delay detect                          
+R0493     delay detect in MAG. rotating                     
+R0495     end sign of Z axis to 1st reference               
+R0497     spindle brake delay disconnected                  
+R0500     spindle analog gear select signal  
+R0501     Auto, MDI, Zeroing, DNC mode                                         
+R0502     GR1 gear signal delay detect                                         
+R0503     GR2 gear signal delay detect                                         
+R0504     GR3 gear signal delay detect                                         
+R0505     T code executed or not                                               
+R0510     turning of auto run signal                                           
+R0512     MAG. advance condition 1                                             
+R0513     Current tool detect
+R0523     Spindle tool detect
+R0551     spindle I/O control gear 1 signal                                    
+R0552     spindle I/O control gear 2 signal                                    
+R0553     spindle I/O control gear 3 signal                                    
+R0560     spindle I/O control signal input                                     
+R0561     spindle gear 1 delay detect                                          
+R0562     spindle gear 2 delay detect                                          
+R0563     spindle gear 3 delay detect                                          
+R0564     GR1 gear signal (input)                                              
+R0565     GR2 gear signal (input)                                              
+R0566     GR3 gear signal (input)                                              
+R0567     spindle gearing in-position or not                                   
+R0590     logic 0 state                                                        
+R0610     mode switching disabled in MAG.                                      
+R0612     Auto, MDI, DNC                                                       
+R0634     spindle orientation input                                            
+R0635     spindle orientation input upward edge                                
+R0640     spindle rotating condition                                           
+R0641     spindle CCW input                                                    
+R0642     spindle stop input 2                                                 
+R0643     spindle CW input                                                     
+R0644     spindle orientation input                                            
+R0645     spindle CCW delay finish                                             
+R0646     spindle CW delay finish                                              
+R0666     spindle free position input                                          
+R0667     M5 delay finish                                                      
+R0670     M code end signal                                                    
+R0671     cycle start input                                                    
+R0677     M code delay finish
+R0684     non-MPG, non-Step mode                                               
+R0685     Manual, Step mode detect                                             
+R0686     Manual, Step,MPG mode detect                                         
+R0687     Zeroing, MPG mode detect                                             
+R0690     only 1 axis for manual reference                                     
+R0703     MT-manual feed axis +4th                                             
+R0707     MT-manual feed axis -4th                                             
+R0715     X axis lock in MPG mode                                              
+R0716     X axis lock in Zeroing mode                                          
+R0717     Y axis lock in MPG mode                                              
+R0720     Y axis lock in Zeroing mode                                          
+R0721     Z axis lock in MPG mode                                              
+R0722     Z axis lock in Zeroing mode                                          
+R0723     4th axis lock in MPG mode                                            
+R0724     4th axis lock in Zeroing mode                                        
+R0725     overtravel detect                                                    
+R0740     spindle gear select connection
+R0741     spindle analog gear delay connect
+R0743     spindle gearing delay finish
+R0744     gearing in-pos signal
+R0745     gearing in-pos delay disconnection                                         
+R0750     spindle stop input 1                                                 
+R0781     manual release/clamp control                                         
+R0782     tool release/clamp                                                   
+R0783     spindle tool release finish delay                                    
+R0784     spindle tool clamp finish delay                                      
+R0785     spindle tool release detect delay                                    
+R0786     spindle tool clamp detect delay                                      
+R0787     spindle stop                                                         
+R0801     1s pulse                                                             
+R0802     MAG. advance in-position                                             
+R0803     MAG. retract in-position detect                                      
+R0804     MAG. counting/in-position                                            
+R0805     MAG. Zeroing in-position                                             
+R0806     spindle positioning delay detect                                     
+R0807     Input manual tool clamp/release
+R0810     spindle CCW detect delay                                             
+R0811     spindle CW detect delay                                              
+R0815     spindle orientating finish signal                                    
+R0816     power on initiation pulse                                            
+R0817     manual MAG. origin                                                   
+R0820     manual MAG. origin                                                   
+R0821     tool release detect                                                  
+R0823     tool clamp detect                                                    
+R0824     Spindle tool clamp
+R0831     no tool no. or repeated in tool list                                 
+R0834     cycle start condition                                                
+R0846     in tool searching                                                    
+R0861     MAG. CCW/CW in-position                                              
+R0864     orientation end signal delay detect                                  
+R0865     spindle rotate                                                          
+R0866     inefficient spindle run                                              
+R0867     spindle rotate 2                                   
+R0870     MAG. advance condition detect                                        
+R0875     auxiliary relay of +X limit                                          
+R0876     auxiliary relay of +Y limit                                          
+R0877     auxiliary relay of +Z limit                                          
+R0880     auxiliary relay of +4th limit                                        
+R0881     auxiliary relay of -X limit                                          
+R0882     auxiliary relay of -Y limit                                          
+R0883     auxiliary relay of -Z limit                                          
+R0884     auxiliary relay of -4th limit                                        
+R0900     if tool in spindle                                                   
+R0902     if tool no. same in spindle&MAG.                                     
+R0903     axis key signal active detect                                        
+R0904     Zero, Step, Manual, MPG mode detect                                  
+R0910     X 1st reference return end signal
+R0911     Y 1st reference return end signal
+R0912     Z 1st reference return end signal
+R0915     manual tool change return state                                      
+R0916     MAG. in advance position                                             
+R0917     spindle orientation position detect
+R0920     spindle orientation condition                                        
+R0931     clamp rising edge in-pos detect                                             
+R0932     clamp rising edge detect
+R0936     release rising edge in-pos detect                                           
+R0937     release rising edge detect
+R0940     MAG. in advance point in running                                     
+R0942     if MAG. in tuning mode                                               
+R0955     spindle jog input                                                    
+R0956     spindle jog input lock                                               
+R0957     spindle jog delay cut off                                            
+R0960     spindle jog input                                                    
+R0984     MAG. in turning                                                      
+R0986     lock by RESET key in auto turning                                    
+R0993     if T code normal                                                     
+R0996     spindle tool no. clearing                                            
+R1000     MAG. turning condition                                               
+R1001     manual MAG. CCW key delay                                            
+R1002     manual MAG. CW key delay                                             
+R1003     manual MAG. CCW input                                                
+R1004     manual MAG. CW input                                                 
+R1005     MAG. turning in-position signal                                      
+R1006     manual MAG. CCW                                                      
+R1007     manual MAG. CW                                                       
+R1010     MAG. in CCW                                                          
+R1012     MAG. in CW                                                           
+R1013     MAG. turning                                                         
+R1014     MAG. turning and counting                                            
+R1015     MAG. counting CCW,CW jugde                                           
+R1016     MAG. turning counter                                                 
+R1017     MAG. zeroing key signal                                              
+R1021     MAG. zeroing finish signal                                           
+R1022     zeroing turning hold auxiliary relay                                 
+R1023     MAG. zeroing finish                                                  
+R1024     MAG. in turning                                                      
+R1025     delay detect in MAG. turning                                         
+R1026     MAG. turning delay detect                                            
+R1030     MAG. auto turning                                                    
+R1031     MAG. CCW,CW jugde                                                    
+R1032     MAG. auto CCW                                                        
+R1033     MAG. auto CW                                                         
+R1051     tool no. is 0                                                        
+R1052     tool change condition                                                
+R1053     tool change pulse if condition met                                   
+R1054     auto tool change start                                               
+R1055     no tool in spindle                                                   
+R1056     search start in tool retracting                                      
+R1057     search start in tool retracting                                      
+R1060     search finish in tool retracting                                     
+R1061     search start in clamping new tool                                    
+R1063     search finish in clamping new tool                                   
+R1064     search finish in subprogram                                          
+R1070     MAG. advance condition                                               
+R1071     Spindle tool clamp detect
+R1072     MAG. advance                                                         
+R1073     MAG. advance lock                                                    
+R1074     MAG. retract input                                                   
+R1075     MAG. retract lock                                                    
+R1076     MAG. advance delay detect                                       
+R1077     MAG. retract delay detect                                       
+R1080     MAG. advance finish delay                           
+R1081     MAG. retract finish delay                           
+R1082     MAG. advance finish delay detect
+R1083     MAG. retract finish delay detect
+R1084     Spindle auto release tool rising edge
+R1085     Spindle tool clamp finish delay
+R1086     Spindle tool clamp rising edge
+R1087     Spindle tool release finish delay
+R1091     Spindle tool auto release
+R1100     spindle free position delay finish             
+R1200     in searching                                  
+R1203     searched tool found                           
+R1206     MAG. in auto searching                        
+R1207     auto advance signal                     
+R1210     MAG. advance finish                   
+R1211     MAG. advance finish                   
+R1212     spindle tool release finish           
+R1213     MAG. auto search finish               
+R5100     ladder initial scanning on            
+R5110     off                                   
+R5116     1s period signal                      
+end //Ω· ¯±Í÷æ
