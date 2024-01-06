@@ -4,14 +4,12 @@ O72000;
 (F = #9 = Feedrate)
 G91;
 
-G65 H83 P10 Q#7 R0;
-G65 H01 P#3000 Q1 (No diameter)
-
-N10 G65 H83 P20 Q#9 R0;
-G65 H01 P#3000 Q1 (No feedrate)
+G65 H86 P910 Q#7 R0;
+G65 H86 P920 Q#9 R0;
+G65 H86 P930 Q#500 R0;
 
 (Change diameter to radius)
-N20 G65 H05 P#7 Q#7 R2;
+G65 H05 P#7 Q#7 R2;
 
 G65 H01 P#20 Q#5011;
 G65 H01 P#21 Q#5012;
@@ -19,6 +17,7 @@ G65 H01 P#21 Q#5012;
 (Probe X)
 G31 X#7 F#9;
 G04 P10;
+G65 H81 P900 Q#1015 R0;
 
 (Reverse until SKIP = 0)
 N100 G91 G01 X-1;
@@ -27,7 +26,7 @@ G65 H01 P#26 Q#1015;
 G04 P10;
 G65 H81 P100 Q#26 R1;
 
-G31 X2 F10;
+G31 X2 F#500;
 
 (Record X-axis skip position)
 G65 H01 P#100 Q#5016;
@@ -47,7 +46,7 @@ G65 H01 P#26 Q#1015;
 G04 P10;
 G65 H81 P200 Q#26 R1;
 
-G31 X-2 F10;
+G31 X-2 F#500;
 (Record X-axis skip position)
 G65 H01 P#101 Q#5016;
 
@@ -71,7 +70,7 @@ G65 H01 P#26 Q#1015;
 G04 P10;
 G65 H81 P300 Q#26 R1;
 
-G31 Y2 F10;
+G31 Y2 F#500;
 (Record Y-axis skip position)
 G65 H01 P#102 Q#5017;
 
@@ -89,7 +88,7 @@ G65 H01 P#26 Q#1015;
 G04 P10;
 G65 H81 P400 Q#26 R1;
 
-G31 Y-2 F10;
+G31 Y-2 F#500;
 (Record Y-axis skip position)
 G65 H01 P#103 Q#5017;
 
@@ -104,7 +103,11 @@ G90 G01 Y#21 F#9;
 
 (Move to bore center)
 G91 G01 X#14 Y#15 F#9;
-(G10 L2 P1 X#12 Y#13)
-(G11;)
+G65 H80 P1000;
+
+N900 G65 H01 P#3000 Q1 (Protected move fail)
+N910 G65 H01 P#3000 Q1 (No diameter)
+N920 G65 H01 P#3000 Q1 (No feedrate)
+N930 G65 H01 P#3000 Q1 (No probe feedrate)
 
 N1000 M99;
