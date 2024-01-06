@@ -32,65 +32,65 @@ M51 F0272 Auto change tool stop
 M53 F0273 Is right tool after change?
 M55 F0274 Have tool in spindle?
 %
-X0000     X axis positive travel limit             
-X0001     X axis negative travel limit             
-X0002     Y axis positive travel limit             
-X0003     Y axis negative travel limit             
-X0004     Z axis positive travel limit             
-X0005     Z axis negative travel limit             
-X0006     4th axis positive travel limit           
-X0007     4th axis negative travel limit           
-X0010     X axis zero return dec          
-X0011     Y axis zero return dec          
-X0012     Z axis zero return dec          
-X0013     4th axis zero return dec        
-X0014     Emergency switch                         
-X0015     External cycle start                     
-X0016     External Pause                      
-X0017     Pressure switch detection                
-X0020     Low lubricant level                      
-X0021     Undefined                      
-X0022     Cooling motor overheat                   
-X0023     Hydraulic motor overheat                 
-X0024     External tool release/clamp                               
-X0025     Tool release detection                   
-X0026     Tool clamp detection                     
-X0027     Spindle unit alarm                       
-X0030     Edit Lock                                
-X0031     Operate Lock                                
-X0032     Undefined                                
-X0033     Undefined                                
-X0034     Undefined                                
-X0035     Undefined                                
-X0036     Undefined                                
-X0037     Undefined                                
-X0040     Hand unit enable                         
-X0041     1st spindle gear in-position             
-X0042     2nd spindle gear in-position             
-X0043     3rd spindle gear in-position             
-X0044     Check status of spindle                                
-X0045     Undefined                                
-X0046     Spindle speed in-position                
-X0047     Spindle zero detection                   
-X0050     Spindle orientation in-position          
-X0051     MAG. move forward in-pos   
-X0052     MAG. move backward in-pos  
+X0000     X axis positive travel limit
+X0001     X axis negative travel limit
+X0002     Y axis positive travel limit
+X0003     Y axis negative travel limit
+X0004     Z axis positive travel limit
+X0005     Z axis negative travel limit
+X0006     4th axis positive travel limit
+X0007     4th axis negative travel limit
+X0010     X axis zero return dec
+X0011     Y axis zero return dec
+X0012     Z axis zero return dec
+X0013     4th axis zero return dec
+X0014     Emergency switch
+X0015     External cycle start
+X0016     External Pause
+X0017     Pressure switch detection
+X0020     Low lubricant level
+X0021     Skip signal input
+X0022     Cooling motor overheat
+X0023     Hydraulic motor overheat
+X0024     External tool release/clamp
+X0025     Tool release detection
+X0026     Tool clamp detection
+X0027     Spindle unit alarm
+X0030     Edit Lock
+X0031     Operate Lock
+X0032     Undefined
+X0033     Undefined
+X0034     Undefined
+X0035     Undefined
+X0036     Undefined
+X0037     Undefined
+X0040     Hand unit enable
+X0041     1st spindle gear in-position
+X0042     2nd spindle gear in-position
+X0043     3rd spindle gear in-position
+X0044     Check status of spindle
+X0045     Undefined
+X0046     Spindle speed in-position
+X0047     Spindle zero detection
+X0050     Spindle orientation in-position
+X0051     MAG. move forward in-pos
+X0052     MAG. move backward in-pos
 X0053     MAG. rotation f/b in-pos
-X0054     MAG. zero in-position           
-X0055     MAG. air press detection        
-X0056     Undefined                                
-X0057     Spindle alarm                            
-X0060     external handwheel X selection           
-X0061     external handwheel Y selection           
-X0062     external handwheel Z selection           
-X0063     external handwheel A selection           
-X0064     external handwheel X step 0.001           
-X0065     external handwheel X step 0.01           
-X0066     external handwheel X step 0.1           
-X0067     external emergent halt 
-Y0000     Z axis brake hold                        
-Y0001     Cooling                                  
-Y0002     Tool release or clamp                    
+X0054     MAG. zero in-position
+X0055     MAG. air press detection
+X0056     Undefined
+X0057     Spindle alarm
+X0060     external handwheel X selection
+X0061     external handwheel Y selection
+X0062     external handwheel Z selection
+X0063     external handwheel A selection
+X0064     external handwheel X step 0.001
+X0065     external handwheel X step 0.01
+X0066     external handwheel X step 0.1
+X0067     external emergent halt
+Y0000     Z axis brake hold
+Y0001     Cooling
+Y0002     Tool release or clamp
 Y0003     Program end (M30)and power off           
 Y0004     Spindle brake                            
 Y0005     Spindle act                              
@@ -503,4 +503,4 @@ R1213     MAG. auto search finish
 R5100     ladder initial scanning on            
 R5110     off                                   
 R5116     1s period signal                      
-end //Ω· ¯±Í÷æ
+end
