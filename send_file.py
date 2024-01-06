@@ -143,9 +143,10 @@ while True:
         cmd.process(data, data_str)        
     else:
         if (len(cmd.commandQueue) > 0):
-            command  = cmd.commandQueue.pop(0)
+            command = cmd.commandQueue.pop(0)
 
             cmd.send_command(command)
+            command = None
         else:
             if (command):                
                 quit()
