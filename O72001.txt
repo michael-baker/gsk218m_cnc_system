@@ -1,5 +1,5 @@
 O72001;
-(Probe boss)
+(CENTER OF BOSS OVER TOP START on X- side)
 (G65 P72001 X100 Z5 F1000)
 (X = #24 = Part width)
 (Z = #26 = Part location)
