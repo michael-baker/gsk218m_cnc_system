@@ -20,3 +20,18 @@ These macro commands are identified by the H code and each performs a specific a
 
 Each of these macros is called by using the G65 command followed by the macro identifier (H01, H02, etc.) and the necessary parameters.
 For example, to add two variables using the H02 macro, you would use a command like G65 H02 P#i Q#j R#k, where P#i is the variable to store the result, Q#j and R#k are the variables whose values are to be added.
+
+This syntax is refered to as MACRO A.
+
+A controller bug prevents the use of G65 PXXXXX calls when a macro itself contains a G31 move. In this situation the machine alarm with 078 'program not found'.
+This situation makes it impossible to us the DRY princuple and instead the macro must be a single monolithic program.
+
+I have attempted placing the macro(s) in the MACRO folder, SUB PROGRAM and PART directories as well as using different naming schemes (9xxxx prefix or 8xxxxx) prefix but this does not workaround the behaviour. 
+
+Center measurement
+o External diameter
+o Internal diameter
+o External length - width
+o Internal length - width
+o Depth of a feature
+o Angle of a feature
