@@ -5,6 +5,7 @@ O72010;
 (X = #24 = Part width)
 (Z = #26 = Clearance height)
 (F = #9 = Feedrate)
+M98 P72100;
 G65 H86 P900 Q#24 R0;
 G65 H86 P910 Q#26 R0;
 

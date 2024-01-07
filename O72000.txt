@@ -2,6 +2,7 @@ O72000;
 (Bore Center)
 (D = #7 = Approx diameter)
 (F = #9 = Feedrate)
+M98 P72100;
 G65 H86 P910 Q#7 R0;
 G65 H86 P920 Q#9 R0;
 G65 H86 P930 Q#500 R0;
