@@ -49,8 +49,6 @@ G65 H01 P#101 Q#5016;
 (C1 = [P1+P2] / 2)
 G65 H02 P#12 Q#100 R#101;
 G65 H05 P#12 Q#12 R2;
-(Calculate shift distance)
-G65 H03 P#14 Q#12 R#20
 
 (Move to start)
 G90 G01 X#20 F#9;
@@ -87,14 +85,12 @@ G65 H01 P#103 Q#5017;
 (C2 = [P2+P3] / 2)
 G65 H02 P#13 Q#102 R#103;
 G65 H05 P#13 Q#13 R2;
-(Calculate shift distance)
-G65 H03 P#15 Q#13 R#21;
 
 (Move to start)
 G90 G01 Y#21 F#9;
 
 (Move to bore center)
-G91 G01 X#14 Y#15 F#9;
+G90 G01 X#12 Y#13 F#9;
 G65 H80 P1000;
 
 N900 G65 H01 P#3000 Q1; (Protected move fail)
