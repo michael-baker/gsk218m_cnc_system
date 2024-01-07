@@ -1,7 +1,7 @@
-﻿# gsk218m_cnc_system
+﻿# GSK 218M CNC Controller
 GCode probing snippets for a GSK218M CNC System
 
-The G-code in the context of GSK218M CNC system
+The G-code in the context of GSK218M.
 
 The GSK218M CNC system uses several macro commands in conjunction with the G65 command. 
 These macro commands are identified by the H code and each performs a specific arithmetic or logical operation. Here's a list of these macro commands and their functions:
@@ -30,8 +30,8 @@ It is assumed this is due to the SKIP signal raising an interrupt to stop motion
 A controller issue prevents the use of G65 PXXXXX calls when a macro itself contains a G31 move and that move triggers a SKIP signal. In this situation the machine will alarm with 078 'program not found'. This situation makes it impossible to use the DRY principle and instead the macro(s) must be a monolithic.
 
 Various workarounds have been attempted including 
--   placing the macro(s) in the MACRO folder, SUB PROGRAM and PART directories 
--   using different naming schemes (9xxxx prefix or 8xxxxx) 
+-   Placing the macro(s) in the MACRO folder, SUB PROGRAM and PART directories 
+-   Using different naming schemes (9xxxx prefix or 8xxxxx) 
 -   Extra end of block statements
 -   Extra dwells
 None of these techniques change the behaviour.
