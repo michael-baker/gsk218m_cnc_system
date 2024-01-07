@@ -1,5 +1,5 @@
 ﻿# GSK 218M CNC Controller
-GCode probing snippets for a GSK218M CNC System
+G-code probing snippets for a GSK218M CNC System
 
 The G-code in the context of GSK218M.
 
