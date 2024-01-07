@@ -25,9 +25,9 @@ N100 G91 G01 X-0.5 F#9;
 G04 P10;
 G65 H81 P100 Q#1015 R1;
 
-G31 X2 F#500;
-
 (Record X-axis skip position)
+G31 X2 F#500;
+G04 P10;
 G65 H01 P#100 Q#5016;
 
 (Move to start)
@@ -43,8 +43,9 @@ N200 G91 G01 X0.5 F#9;
 G04 P10;
 G65 H81 P200 Q#1015 R1;
 
-G31 X-2 F#500;
 (Record X-axis skip position)
+G31 X-2 F#500;
+G04 P10;
 G65 H01 P#101 Q#5016;
 
 (C1 = [P1+P2] / 2)
