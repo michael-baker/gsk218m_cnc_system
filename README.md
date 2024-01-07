@@ -1,6 +1,5 @@
 ﻿# gsk218m_cnc_system
-GCode snippets and tooling for a GSK218M CNC System
-
+GCode probing snippets for a GSK218M CNC System
 
 The G-code in the context of GSK218M CNC system
 
@@ -21,17 +20,18 @@ These macro commands are identified by the H code and each performs a specific a
 Each of these macros is called by using the G65 command followed by the macro identifier (H01, H02, etc.) and the necessary parameters.
 For example, to add two variables using the H02 macro, you would use a command like G65 H02 P#i Q#j R#k, where P#i is the variable to store the result, Q#j and R#k are the variables whose values are to be added.
 
-This syntax is refered to as MACRO A.
+This syntax is often referred to as MACRO A.
 
-A controller bug prevents the use of G65 PXXXXX calls when a macro itself contains a G31 move. In this situation the machine alarm with 078 'program not found'.
-This situation makes it impossible to us the DRY princuple and instead the macro must be a single monolithic program.
+The default ladder has been modified to set variable #1015 when on the SKIP signal is triggered. This allows easy querying from programs to check if the probe is currently contacting a part and allows for a crude 'protected move'. 
 
-I have attempted placing the macro(s) in the MACRO folder, SUB PROGRAM and PART directories as well as using different naming schemes (9xxxx prefix or 8xxxxx) prefix but this does not workaround the behaviour. 
+There is a lag between the SKIP signal and the variable state changing. 
+It is assumed this is due to the SKIP signal raising an interrupt to stop motion or the perhaps the variables are only refreshed in the second tier of the PLC ladder. To work around this a dwell is added after each G31 move to ensure the variable state is correct.
 
-Center measurement
-o External diameter
-o Internal diameter
-o External length - width
-o Internal length - width
-o Depth of a feature
-o Angle of a feature
+A controller issue prevents the use of G65 PXXXXX calls when a macro itself contains a G31 move and that move triggers a SKIP signal. In this situation the machine will alarm with 078 'program not found'. This situation makes it impossible to use the DRY principle and instead the macro(s) must be a monolithic.
+
+Various workarounds have been attempted including 
+-   placing the macro(s) in the MACRO folder, SUB PROGRAM and PART directories 
+-   using different naming schemes (9xxxx prefix or 8xxxxx) 
+-   Extra end of block statements
+-   Extra dwells
+None of these techniques change the behaviour.
