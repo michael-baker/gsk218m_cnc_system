@@ -1,7 +1,7 @@
 O72000;
-(Bore Center)
-(D = #7 = Approx diameter)
-(F = #9 = Feedrate)
+(BORE CENTER)
+(D = #7 = APPROX DIAMETER)
+(F = #9 = FEEDRATE)
 M98 P72100;
 G65 H86 P910 Q#7 R0;
 G65 H86 P920 Q#9 R0;
@@ -13,39 +13,32 @@ G65 H05 P#7 Q#7 R2;
 G65 H01 P#20 Q#5011;
 G65 H01 P#21 Q#5012;
 
-G91;
-
 (Probe X)
-G31 X#7 F#9;
+G91 G31 X#7 F#9;
 G04 P10;
 G65 H81 P900 Q#1015 R0;
 
 (Reverse until SKIP = 0)
-N100 G91 G01 X-0.5 F#9;
+N100 G91 G01 X-1 F#9;
 G04 P10;
 G65 H81 P100 Q#1015 R1;
 
 (Record X-axis skip position)
-G31 X2 F#500;
-G04 P10;
+G91 G31 X2 F#500;
 G65 H01 P#100 Q#5016;
 
 (Move to start)
-G90;
-G01 X#20 F#9;
-G91;
+G90 G01 X#20 F#9;
 
-G31 X-#7 F#9;
-G04 P10;
+G91 G31 X-#7 F#9;
 
 (Reverse until SKIP = 0)
-N200 G91 G01 X0.5 F#9;
+N200 G91 G01 X1 F#9;
 G04 P10;
 G65 H81 P200 Q#1015 R1;
 
 (Record X-axis skip position)
 G31 X-2 F#500;
-G04 P10;
 G65 H01 P#101 Q#5016;
 
 (C1 = [P1+P2] / 2)
@@ -56,32 +49,29 @@ G65 H05 P#12 Q#12 R2;
 G90 G01 X#20 F#9;
 
 (Probe Y)
-G31 Y#7 F#9;
-G04 P10;
+G91 G31 Y#7 F#9;
 
 (Reverse until SKIP = 0)
-N300 G91 G01 Y-0.5 F#9;
+N300 G91 G01 Y-1 F#9;
 G04 P10;
 G65 H81 P300 Q#1015 R1;
 
-G31 Y2 F#500;
+G91 G31 Y2 F#500;
 (Record Y-axis skip position)
 G65 H01 P#102 Q#5017;
 
 (Move to start)
 G90 G01 Y#21 F#9;
-G91;
 
-G31 Y-#7 F#9;
-G04 P10;
+G91 G31 Y-#7 F#9;
 
 (Reverse until SKIP = 0)
-N400 G91 G01 Y0.5 F#9;
+N400 G91 G01 Y1 F#9;
 G04 P10;
 G65 H81 P400 Q#1015 R1;
 
-G31 Y-2 F#500;
 (Record Y-axis skip position)
+G31 Y-2 F#500;
 G65 H01 P#103 Q#5017;
 
 (C2 = [P2+P3] / 2)

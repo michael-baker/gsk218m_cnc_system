@@ -1,7 +1,7 @@
 O72100;
 (Parameter validation)
 
-G65 H85 P930 Q#500 R100; (Fine probe feedrate)
+G65 H85 P930 Q#500 R200; (Fine probe feedrate)
 G65 H86 P940 Q#2109 R0; (Tool 10 diameter #2109)
 
 G65 H80 P1000;

@@ -1,10 +1,10 @@
 O72011;
 (CENTER OF BOSS OVER TOP)
-(START on Y- side)
+(START ON Y- SIDE)
 (G65 P72011 Y100 Z5 F1000)
-(Y = #25 = Part width)
-(Z = #26 = Clearance height)
-(F = #9 = Feedrate)
+(Y = #25 = PART WIDTH)
+(Z = #26 = CLEARANCE HEIGHT)
+(F = #9 = FEEDRATE)
 M98 P72100;
 G65 H86 P900 Q#25 R0;
 G65 H86 P910 Q#26 R0;
@@ -12,10 +12,8 @@ G65 H86 P910 Q#26 R0;
 (Width/2)
 G65 H05 P#1 Q#25 R2;
 
-G91;
-
 (Probe Y)
-G31 Y#1 F#9;
+G91 G31 Y#1 F#9;
 G04 P10;
 G65 H81 P920 Q#1015 R0;
 
