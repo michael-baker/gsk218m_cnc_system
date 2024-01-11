@@ -148,7 +148,7 @@ while True:
             cmd.send_command(command)
             command = None
         else:
-            if (command):                
+            if (cmd.command):                
                 quit()
 
             # get keyboard input
