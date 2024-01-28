@@ -1,0 +1,39 @@
+O72011;
+(PROBE X - START ON RIGHT)
+(G65 P72012 X-100 F1000)
+
+M98 P72100;
+G65 H86 P900 Q#24 R0;
+G65 H86 P910 Q#26 R0;
+
+(Probe X)
+G91 G31 X-#1 F#9;
+G04 P10;
+G65 H81 P920 Q#1015 R0;
+
+(Reverse until SKIP = 0)
+N100 G91 G01 X1 F#9;
+G04 P10;
+G65 H81 P100 Q#1015 R1;
+
+(Probe X - slow)
+G31 X-1 F#500;
+G04 P10;
+G65 H01 P#100 Q#5016;
+G65 H81 P920 Q#1015 R0;
+
+(Measure)
+(Half of probe effective tip diameter)
+G65 H05 P#148 Q#2109 R2; 
+
+(Subtract radius)
+G65 H03 P#130 Q#100 R#148;
+
+G65 H01 P#5206 Q#130
+
+(GOTO END)
+G65 H80 P1000;
+
+N920 G65 H01 P#3000 Q1; (Protected move fail)
+
+N1000 M99;
